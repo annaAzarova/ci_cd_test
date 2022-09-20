@@ -33,6 +33,7 @@ jobs:
         with:
           repository: annaAzarova/ci_cd_test
           ref: develop
+          token: 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
 
       - name: Pull request to develop
         uses: git pull origin main

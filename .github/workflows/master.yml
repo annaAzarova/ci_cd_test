@@ -13,8 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Dart
-        uses: dart-lang/setup-dart@v1
+      # - name: Install Dart
+      #   uses: dart-lang/setup-dart@v1
 
       # - name: Generate coverage badge
       #   working-directory: ${{ github.workspace }}
@@ -28,7 +28,7 @@ jobs:
 
       - name: Pull request from main to develop
         run: |
-          git fetch --all --allow-unrelated-histories
+          git fetch --all --unshallow
           git checkout develop
           git pull origin main
 

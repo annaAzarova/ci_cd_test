@@ -33,5 +33,5 @@ jobs:
 
       - name: Pull request from main to develop
         run: |
-          git config pull.rebase false
+          git config --global pull.ff true
           git pull origin main

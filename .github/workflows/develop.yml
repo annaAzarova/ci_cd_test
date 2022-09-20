@@ -1,0 +1,17 @@
+name: develop
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build_android:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Pull request from main to develop
+        run: git pull origin main

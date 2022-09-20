@@ -1,0 +1,37 @@
+name: master
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_android:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: dart-lang/setup-dart@v1.3
+
+      - name: Install Dart
+        uses: dart-lang/setup-dart@v1.3
+
+      - name: Generate coverage badge
+        working-directory: ${{ github.workspace }}
+        run: dart run change-number.dart
+
+      - name: Commit changes
+        if: failure() || success()
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "change number"
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: develop
+
+      - name: Pull request to develop
+        uses: git pull origin main

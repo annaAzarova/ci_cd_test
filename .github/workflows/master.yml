@@ -26,18 +26,12 @@ jobs:
       #   with:
       #     message: "change number"
 
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: develop
+
       - name: Pull request from main to develop
         run: |
-          git fetch --all --unshallow
-          git checkout develop
+          git config pull.rebase true
           git pull origin main
-
-      # - name: Checkout code
-      #   uses: actions/checkout@v2
-      #   with:
-      #     ref: develop
-
-      # - name: Pull request from main to develop
-      #   run: |
-      #     git config pull.rebase false
-      #     git pull origin main

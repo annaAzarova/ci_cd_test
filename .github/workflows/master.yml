@@ -16,15 +16,15 @@ jobs:
       - name: Install Dart
         uses: dart-lang/setup-dart@v1
 
-      - name: Generate coverage badge
-        working-directory: ${{ github.workspace }}
-        run: dart run change-number.dart
+      # - name: Generate coverage badge
+      #   working-directory: ${{ github.workspace }}
+      #   run: dart run change-number.dart
 
-      - name: Commit changes
-        if: failure() || success()
-        uses: EndBug/add-and-commit@v9
-        with:
-          message: "change number"
+      # - name: Commit changes
+      #   if: failure() || success()
+      #   uses: EndBug/add-and-commit@v9
+      #   with:
+      #     message: "change number"
 
       - name: Pull request from main to develop
         run: |

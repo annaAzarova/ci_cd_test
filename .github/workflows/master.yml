@@ -32,6 +32,4 @@ jobs:
           ref: develop
 
       - name: Pull request from main to develop
-        run: |
-          git config pull.rebase true
-          git pull origin main
+        run: git pull origin main

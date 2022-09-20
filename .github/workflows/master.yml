@@ -26,12 +26,12 @@ jobs:
         with:
           message: "change number"
 
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          ref: develop
+      # - name: Checkout code
+      #   uses: actions/checkout@v2
+      #   with:
+      #     ref: develop
 
-      - name: Pull request from main to develop
-        run: |
-          git config --global pull.ff only
-          git pull origin main
+      # - name: Pull request from main to develop
+      #   run: |
+      #     git config --global pull.ff only
+      #     git pull origin main

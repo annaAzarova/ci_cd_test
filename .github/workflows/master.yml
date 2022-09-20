@@ -33,5 +33,5 @@ jobs:
 
       - name: Pull request from main to develop
         run: |
-          git config --global pull.ff true
+          git config --global pull.ff true --allow-unrelated-histories
           git pull origin main

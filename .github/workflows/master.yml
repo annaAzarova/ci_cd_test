@@ -29,9 +29,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          # repository: annaAzarova/ci_cd_test
-          ref: "develop"
-          # token: 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
+          ref: develop
 
       - name: Pull request from main to develop
-        run: git pull origin main
+        run: |
+          git config pull.rebase false
+          git pull origin main

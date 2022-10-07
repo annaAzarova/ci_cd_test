@@ -16,20 +16,23 @@ jobs:
       - name: Install Dart
         uses: dart-lang/setup-dart@v1
 
-      - name: Generate coverage badge
+      - name: Install lcov
         working-directory: ${{ github.workspace }}
-        run: dart run change-number.dart
+        run: brew install lcov
 
-      - name: Commit changes
-        if: failure() || success()
-        uses: EndBug/add-and-commit@v9
-        with:
-          message: "change number"
+      # - name: Generate coverage badge
+      #   working-directory: ${{ github.workspace }}
+      #   run: dart run change-number.dart
 
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          ref: develop
+      # - name: Commit changes
+      #   uses: EndBug/add-and-commit@v9
+      #   with:
+      #     message: "change number"
 
-      - name: Pull request from main to develop
-        run: git pull origin main
+      # - name: Checkout code
+      #   uses: actions/checkout@v2
+      #   with:
+      #     ref: develop
+
+      # - name: Pull request from main to develop
+      #   run: git pull origin main

@@ -16,6 +16,10 @@ jobs:
       - name: Install Dart
         uses: dart-lang/setup-dart@v1
 
+      - name: Install HomeBrew
+        working-directory: ${{ github.workspace }}
+        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
       - name: Install lcov
         working-directory: ${{ github.workspace }}
         run: brew install lcov

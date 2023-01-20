@@ -26,7 +26,7 @@ jobs:
         uses: "WyriHaximus/github-action-get-previous-tag@v1"
         with:
           fallback: 1.0.0
-          prefix: "production"
+          prefix: "p"
 
       - name: "Get version"
         id: lastversion

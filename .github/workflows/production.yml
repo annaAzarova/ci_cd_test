@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: print tag
         run: |
-          echo ${{ needs.get_tag.outputs.version }}
+          echo "${{ needs.get_tag.outputs.version }}"

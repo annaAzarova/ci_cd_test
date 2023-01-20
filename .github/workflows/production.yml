@@ -13,5 +13,8 @@ jobs:
 
   show_tag:
     needs: get_tag
-    run: |
-      echo ${{ needs.get_tag.outputs.version }}
+    runs-on: ubuntu-18.04
+    steps:
+      - name: print tag
+        run: |
+          echo ${{ needs.get_tag.outputs.version }}

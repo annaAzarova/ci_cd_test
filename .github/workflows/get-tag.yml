@@ -27,3 +27,9 @@ jobs:
         with:
           fallback: 1.0.0
           prefix: "production"
+
+      - name: "Get version"
+        id: lastversion
+        run: |
+          ver=${{ steps.previoustag.outputs.tag }}
+          echo "::set-output name=version::${ver:1}"

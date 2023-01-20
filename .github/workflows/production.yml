@@ -8,8 +8,6 @@ on:
 jobs:
   get_tag:
     uses: ./.github/workflows/get-tag.yml
-    secrets:
-      token: "${{ secrets.GIT_AUTHORIZATION }}"
 
   show_tag:
     needs: get_tag

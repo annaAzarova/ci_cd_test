@@ -1,0 +1,29 @@
+name: get-tag
+
+on:
+  workflow_call:
+    outputs:
+      version:
+        value: ${{ jobs.get-tag.outputs.version }}
+      build_number:
+        value: ${{ jobs.get-tag.outputs.buildnumber }}
+
+jobs:
+  get-tag:
+    name: Get tag
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.lastversion.outputs.version }}
+      buildnumber: ${{ steps.commitswithintime.outputs.total-commits }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: "Get tag"
+        id: previoustag
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        with:
+          fallback: 1.0.0
+          prefix: "production"

@@ -1,18 +1,18 @@
-name: production
+# name: production
 
-on:
-  push:
-    branches:
-      - production
+# on:
+#   push:
+#     branches:
+#       - production
 
-jobs:
-  get_tag:
-    uses: ./.github/workflows/get-tag.yml
+# jobs:
+#   get_tag:
+#     uses: ./.github/workflows/get-tag.yml
 
-  show_tag:
-    needs: get_tag
-    runs-on: ubuntu-18.04
-    steps:
-      - name: print tag
-        run: |
-          echo "${{ needs.get_tag.outputs.version }}"
+#   show_tag:
+#     needs: get_tag
+#     runs-on: ubuntu-18.04
+#     steps:
+#       - name: print tag
+#         run: |
+#           echo "${{ needs.get_tag.outputs.version }}"

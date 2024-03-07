@@ -18,7 +18,6 @@ jobs:
 
       - name: APP_STORE_CONNECT_KEY_CONTENT1
         run: echo "${{ secrets.APP_STORE_CONNECT_KEY_CONTENT1 }}"
-        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
 
       # - name: Install Dart
       #   uses: dart-lang/setup-dart@v1
